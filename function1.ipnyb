@@ -1,1 +1,9 @@
 
+# Function 1
+This function is a function with a 1D output and a 2D input. The goal of this project is to optimize it.
+
+This is the description of the function: Detect likely contamination sources in a two-dimensional area, such as a radiation field, where only proximity yields a non-zero reading. The system uses Bayesian optimisation to tune detection parameters and reliably identify both strong and weak sources.
+
+## Initial datapoints
+
+## Week 1
