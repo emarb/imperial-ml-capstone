@@ -2,7 +2,7 @@
 Capstone project for Professional certificate in ML and AI at Imperial College Exec Education
 
 ## Project goals
-TBD
+Optimize 8 black box functions in 12 weekly submissions.
 
 ## Tools and libraries used
-TBD
+Scikit-learn
