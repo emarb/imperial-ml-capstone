@@ -10,9 +10,7 @@ All variables range from 0 to 1 and vary from 2-dimensional to 8-dimensional.
 
 In a **black-box optimization** problem, you have a function  
 
-\[
-f(x): \mathbb{R}^d \to \mathbb{R}
-\]
+``f(x): R^d → R``
 
 that you can **evaluate** (possibly at high cost), but:
 
@@ -20,15 +18,11 @@ that you can **evaluate** (possibly at high cost), but:
 - You can’t compute gradients  
 - Each evaluation is expensive or noisy  
 
-The goal is to find the input \(x^*\) that minimizes (or maximizes) the function:
+The goal is to find the input `x*` that minimizes (or maximizes) the function:
 
-\[
-x^* = \arg\min_x f(x)
-\]
+``x* = argmin_x f(x)``
 
-(or equivalently, \(\arg\max_x f(x)\)).
-
-In other words, the goal is to to optimize \(f(x)\) **without access to derivatives or internal structure** — we can only treat it as a black box that takes an input and returns an output. The number of trials is limited and they are separated in time with only weekly sampling windows.
+In other words, the goal is to to optimize `f(x)` **without access to derivatives or internal structure** — we can only treat it as a black box that takes an input and returns an output. The number of trials is limited and they are separated in time with only weekly sampling windows.
 
 
 ## Tools and libraries used
