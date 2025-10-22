@@ -3,10 +3,32 @@ This is part of the capstone project for the Professional Certificate in Machine
 
 The project has been set up in a way that real-world conditions are simulated. Results can only be submitted once a week, and the results are back in a few days. This means that any brute force strategy is out of the quesiton and they we are given enough time to reflect on an approach for the following week.
 
-## Project goals
+## Black-box optimization goal
 The goal of this project is the optimization of 8 black-box functions. For each of the functions 10 initial data points are given and each week I must submit a new data point to evaluate. This simulates a costly process of actual evaluation.
 
-All variables range from 0 to 1 and vary from 2-dimensional to 8-dimensional
+All variables range from 0 to 1 and vary from 2-dimensional to 8-dimensional.
+
+In a **black-box optimization** problem, you have a function  
+
+\[
+f(x): \mathbb{R}^d \to \mathbb{R}
+\]
+
+that you can **evaluate** (possibly at high cost), but:
+
+- You don’t know its analytic form  
+- You can’t compute gradients  
+- Each evaluation is expensive or noisy  
+
+The goal is to find the input \(x^*\) that minimizes (or maximizes) the function:
+
+\[
+x^* = \arg\min_x f(x)
+\]
+
+(or equivalently, \(\arg\max_x f(x)\)).
+
+In other words, the goal is to to optimize \(f(x)\) **without access to derivatives or internal structure** — we can only treat it as a black box that takes an input and returns an output. The number of trials is limited and they are separated in time with only weekly sampling windows.
 
 
 ## Tools and libraries used
