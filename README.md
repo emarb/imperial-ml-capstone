@@ -26,11 +26,28 @@ In other words, the goal is to to optimize `f(x)` **without access to derivative
 
 
 ## Tools and libraries used
-I have documented the process in a Jupyter notebook that is to be red chronologically. For each of the functions the variables and data are as of the week that is described. That way it is possible to keep track of what previous results were, what the reasonings were and of course any mistakes made.
+In terms of libraries, the backbone of my project is built around **scikit-learn** (and therefore **NumPy**) for scaling, Gaussian Process models, Support Vector Machines and evaluation metrics. These libraries form the numerical core of the workflow: **NumPy**provides efficient vectorised operations for manipulating arrays and evaluating candidate points, while scikit-learn offers a stable API for experimenting with different kernels, surrogate models and preprocessing steps. The trade-off is that scikit-learn’s Gaussian Process implementation can become slow or unstable in higher dimensions, and NumPy requires careful handling of array shapes and broadcasting rules.
 
-The notebook makes extensive use of NumPy and Scikit-learn to mainly analyze the data and model uncertainty with Gaussian processes.
+I also use **SciPy**, specifically its optimization, distance and statistics modules. These tools allow me to run local optimizations, compute distances between candidate points and evaluate statistical properties of the sampled results. SciPy fits the workflow because it bridges the gap between numerical methods and machine learning models, though it can require more low-level parameter tuning and may not scale well to very large datasets.
 
-I have also created a Pandas dataframe called results_df that contains an overview of each week's results for each function. This will be helpful to make a final analysis at the end of the project.
+To complement the scikit-learn models, I experimented with **TensorFlow** through its **Keras** interface to build a simple neural network. This allowed me to benchmark how a deep-learning–based surrogate behaves compared to Gaussian Processes. **Keras** is easy to prototype with, but neural networks introduce higher computational cost, require more careful hyperparameter tuning and tend to be less interpretable—important trade-offs compared to classical surrogate models.
+
+All results are stored in a Pandas DataFrame (results_df), which provides an organised, human-readable structure for comparing weekly outcomes across functions. This makes it easier to review progress, validate assumptions and identify potential mistakes. The trade-off is that Pandas can become memory-heavy for large intermediate datasets, and maintaining consistent data types across weeks requires discipline.
+
+Finally, I have documented the entire workflow chronologically in a Jupyter Notebook. This format allows me to interleave code, reasoning and intermediate observations, making the exploration process transparent. The downside is that notebooks can become difficult to reproduce unless cells are executed in a controlled order.
+
+Overall, these libraries were the right choices for this project because they are industry-standard tools, widely used in both machine learning research and applied workflows. Using them strengthens my understanding of common ML tooling and ensures that the methods I develop are compatible with existing codebases. 
+
+## Files and reproducibility
+
+### Inputs
+The input files first received at the beginning of the challenge are inside the "initial_data" folder, with one folder per function.
+
+### Outputs
+For each weekly submission, the platform has generated one "inputs.txt" and one "outputs.txt" file. Both contain the full history of submitted queries and the results. I have stored all of these inside the "submissions" folder
+
+### Reproducing the work
+The Jupyter notebook can be reexecuted with all the files from "submissions" and "initial_data" downloaded. It is important that the cells are executed in order because data is added to the arrays gradually from the Pandas "results_df" dataframe to simulate partial knowledge.
 
 ## Functions overview
 More details of each function including boundaries and plots when appropiate can be found in the notebook.
