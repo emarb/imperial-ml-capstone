@@ -1,7 +1,7 @@
 # imperial-ml-capstone
 This is part of the capstone project for the Professional Certificate in Machine Learning and AI from Imperial College Business School.
 
-The project has been set up in a way that real-world conditions are simulated. Results can only be submitted once a week, and the results are back in a few days. This means that any brute force strategy is out of the quesiton and they we are given enough time to reflect on an approach for the following week.
+The project has been set up in a way that real-world conditions are simulated. Results can only be submitted once a week, and the results are back in a few days. This means that any brute force strategy is out of the quesiton and they we are given enough time to reflect on an approach for the following week. There is a total of 13 attemps in 13 weeks.
 
 ## Black-box optimization goal
 The goal of this project is the optimization of 8 black-box functions. For each of the functions 10 initial data points are given and each week I must submit a new data point to evaluate. This simulates a costly process of actual evaluation.
@@ -48,6 +48,25 @@ For each weekly submission, the platform has generated one "inputs.txt" and one 
 
 ### Reproducing the work
 The Jupyter notebook can be reexecuted with all the files from "submissions" and "initial_data" downloaded. It is important that the cells are executed in order because data is added to the arrays gradually from the Pandas "results_df" dataframe to simulate partial knowledge.
+
+## Results overview
+I was able to obtain the following results so far (week 6):
+
+| Function   | Baseline Best              | Improved Value              | % Improvement        | Samples Improved |
+|------------|-----------------------------|------------------------------|------------------------|------------------|
+| Function 1 | 7.710875114502849e-16      | 2.6752879910742468e-09      | +347,031,616.55%      | 1 |
+| Function 2 | 0.6112052157614438         | 0.6669887774564723          | +9.13%                | 1 |
+| Function 3 | -0.034835313350078584      | -0.0014942495830570148      | +95.71%               | 1 |
+| Function 4 | -4.025542281908162         | 0.6230693654973547          | +115.48%              | 2 |
+| Function 5 | 1088.8596181962705         | 3997.541487950317           | +267.13%              | 2 |
+| Function 6 | -0.7142649478202404        | -0.4072033805462628         | +42.98%               | 1 |
+| Function 7 | 1.3649683044991994         | 1.5999115378376856          | +17.21%               | 2 |
+| Function 8 | 9.598482002566342          | 9.9383263498539             | +3.54%                | 3 |
+
+
+### Further comment on methodology
+
+On week 6 I looked back at the results available so far and decided to repeat whatever worked best last, i.e., whatever technique produced an improvement over the previously known best input. 
 
 ## Functions overview
 More details of each function including boundaries and plots when appropiate can be found in the notebook.
