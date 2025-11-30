@@ -36,8 +36,6 @@ We treat `f(x)` as a **true black box**.
 - **Pandas**: storing evolving results in a `results_df` dataframe  
 - **Jupyter Notebooks**: chronological workflow documentation  
 
-(Trade-offs and limitations described in the original text are preserved.)
-
 ## Files and Reproducibility
 
 ### Inputs
