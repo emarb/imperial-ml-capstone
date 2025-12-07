@@ -34,6 +34,7 @@ We treat `f(x)` as a **true black box**.
 - **SciPy**: optimization routines, distances, statistics  
 - **TensorFlow / Keras**: neural-network surrogate experiments  
 - **Pandas**: storing evolving results in a `results_df` dataframe  
+- **Pytorch** and **BoTorch**: TurBO (Trust Region Bayesian Optimization) algorithm
 - **Jupyter Notebooks**: chronological workflow documentation  
 
 ## Files and Reproducibility
@@ -47,21 +48,29 @@ Weekly platform results (`inputs.txt`, `outputs.txt`) are stored in `submissions
 ### Reproducing the Work
 Re-run the notebook with all data downloaded, ensuring sequential execution since sampling is simulated week by week.
 
-## Results Overview (Week 6)
+## Results Overview (up to week 7 submissions)
 
 | Function | Baseline Best | Improved Value | % Improvement | Samples Improved |
 |----------|---------------|----------------|---------------|------------------|
 | 1 | 7.710875114502849e-16 | 2.6752879910742468e-09 | +347,031,616.55% | 1 |
 | 2 | 0.6112052157614438 | 0.6669887774564723 | +9.13% | 1 |
 | 3 | -0.034835313350078584 | -0.0014942495830570148 | +95.71% | 1 |
-| 4 | -4.025542281908162 | 0.6230693654973547 | +115.48% | 2 |
-| 5 | 1088.8596181962705 | 3997.541487950317 | +267.13% | 2 |
+| 4 | -4.025542281908162 | 0.640155190044084 | +115.90% | 3 |
+| 5 | 1088.8596181962705 | 8662.4825 | +695.40% | 3 |
 | 6 | -0.7142649478202404 | -0.4072033805462628 | +42.98% | 1 |
-| 7 | 1.3649683044991994 | 1.5999115378376856 | +17.21% | 2 |
-| 8 | 9.598482002566342 | 9.9383263498539 | +3.54% | 3 |
+| 7 | 1.3649683044991994 | 1.7458885860200508 | +17.21% | 3 |
+| 8 | 9.598482002566342 | 9.9659354963065 | +3.83% | 4 |
 
 ### Methodology Note
-On week 6, I revisited previous results and adopted an iterative strategy of repeating whichever technique produced the most recent improvement.
+The first 5 weeks consisted of experimentation with Gaussian processes, exploring the functions, adjusting the kernels and familiarizing myself with the field of black-box optimization. This was the occasion to develop intuitions and also to try some small experiments such as using a neural network once to classify input regions as "good" or "bad". 
+
+On week 6, I revisited previous results and adopted an iterative strategy of repeating whichever technique produced the most recent improvement for functions 4-6. 
+
+Then, from week 7 to week 9, using the JetBrains paper on BBO strategies in the NeurIPS 2020 competition, I tried to replicate this technique using a TuRBO algorithm. It defines a Trust Region as a hyper-rectangle around the known best solution with a decaying factor that allows shrinks the trust region when no improvements is found to allow for more fine-grained exploration arount the best point. For the TuRBO implementation with ``botorch``, Thompson Sampling (implemented as ``MaxPosteriorSampling``) is used as an acquisition function.
+
+#### What I would have done differently
+
+_To be developped: starting with exploration, applying bounds earlier, etc._
 
 ## Functions Overview
 More details of boundaries, plots and structure are in the notebook.
@@ -90,5 +99,24 @@ Hyperparameter optimisation of a common ML model. Literature‑informed search c
 ### Function 8 (8D → 1D)
 High‑dimensional ML surrogate optimisation (e.g., 8 hyperparameters). Local maxima may be the practical target.
 
-## Visualisations (Placeholder)
-_To be added: plots, 2D/3D projections, convergence curves, acquisition functions._
+## Visualisations / end results (Placeholder)
+_To be added: plots, 2D/3D projections, convergence curves, acquisition function, end results._
+
+## Bibliography
+
+- Eriksson, D., Pearce, M., Gardner, J. R., Turner, R., & Poloczek, M. (2019). *Scalable Global Optimization via Local Bayesian Optimization*. arXiv preprint. [https://arxiv.org/abs/1910.01739](https://arxiv.org/abs/1910.01739) :contentReference[oaicite:0]{index=0}  
+- Balandat, M., Karrer, B., Jiang, D. R., Daulton, S., Letham, B., Wilson, A. G., & Bakshy, E. (2019). *BoTorch: A Framework for Efficient Monte-Carlo Bayesian Optimization*. arXiv preprint. [https://arxiv.org/abs/1910.06403](https://arxiv.org/abs/1910.06403) :contentReference[oaicite:1]{index=1}  
+- Snoek, J., Rippel, O., Swersky, K., Kiros, R., Satish, N., Sundaram, N., Patwary, M. A., Prabhat, & Adams, R. (2015). *Scalable Bayesian Optimization Using Deep Neural Networks*. arXiv preprint. [https://arxiv.org/abs/1502.05700](https://arxiv.org/abs/1502.05700) :contentReference[oaicite:2]{index=2}  
+- Nakayama, H., Arakawa, M., & Washino, K. (2003). *Optimization for Black-box Objective Functions*. In P.M. Pardalos, I. Tsevendorj & R. Enkhbat (Eds.), *Optimization and Optimal Control* (pp. 185–210). World Scientific. DOI: [10.1142/9789812775368_0013](https://doi.org/10.1142/9789812775368_0013) :contentReference[oaicite:3]{index=3}
+
+## Additional resources & tutorials
+
+- **BoTorch** - Official tutorial for trust-region Bayesian optimization (TuRBO). [https://botorch.org/docs/tutorials/turbo_1/](https://botorch.org/docs/tutorials/turbo_1/) :contentReference[oaicite:5]{index=5}  
+- **Official Keras Documentation** - https://keras.io/
+- **Intro to Deep Learning with Keras (TensorFlow)**  - https://www.tensorflow.org/tutorials/keras/classification
+- **Official NumPy Documentation**  - https://numpy.org/doc/
+- **10 Minutes to Pandas**  - https://pandas.pydata.org/docs/user_guide/10min.html
+- **YouTube – Pandas Full Course (freeCodeCamp)**  - https://www.youtube.com/watch?v=vmEHCJofslg
+- **Scikit-Optimize (skopt)**  - https://scikit-optimize.github.io/
+
+
