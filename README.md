@@ -104,6 +104,10 @@ High‑dimensional ML surrogate optimisation (e.g., 8 hyperparameters). Local ma
 ## Visualisations / end results (Placeholder)
 _To be added: plots, 2D/3D projections, convergence curves, acquisition function, end results._
 
+![Plot of all functions weekly results, normalized](images/all_functions_normalized.png)
+
+_To be completed_
+
 ## Bibliography
 
 - Eriksson, D., Pearce, M., Gardner, J. R., Turner, R., & Poloczek, M. (2019). *Scalable Global Optimization via Local Bayesian Optimization*. arXiv preprint. [https://arxiv.org/abs/1910.01739](https://arxiv.org/abs/1910.01739) 
