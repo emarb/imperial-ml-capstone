@@ -48,7 +48,7 @@ Weekly platform results (`inputs.txt`, `outputs.txt`) are stored in `submissions
 ### Reproducing the Work
 Re-run the notebook with all data downloaded, ensuring sequential execution since sampling is simulated week by week.
 
-## Results Overview (up to week 8 submissions)
+## Results Overview (up to week 9 submissions)
 
 | Function | Baseline Best | Improved Value | % Improvement | Samples Improved |
 |----------|---------------|----------------|---------------|------------------|
@@ -57,8 +57,8 @@ Re-run the notebook with all data downloaded, ensuring sequential execution sinc
 | 3 | -0.034835313350078584 | -0.0014942495830570148 | +95.71% | 1 |
 | 4 | -4.025542281908162 | 0.640155190044084 | +115.90% | 3 |
 | 5 | 1088.8596181962705 | 8662.4825 | +695.40% | 3 |
-| 6 | -0.7142649478202404 | -0.4072033805462628 | +42.98% | 1 |
-| 7 | 1.3649683044991994 | 1.7458885860200508 | +17.21% | 3 |
+| 6 | -0.714264947820240 | -0.189498646431783 | 73.47% | 2 |
+| 7 | 1.364968304499199 | 1.970093222323429 | 44.33% | 4 |
 | 8 | 9.598482002566342 | 9.9659354963065 | +3.83% | 4 |
 
 ### Methodology Note
