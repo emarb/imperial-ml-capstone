@@ -74,6 +74,10 @@ Then, from week 7 to week 10, using the JetBrains paper on BBO strategies in the
 
 _To be developped: starting with exploration, applying bounds earlier, etc._
 
+### Data datasheet and model card
+
+The [data datasheet](data-datasheet.md) and [model card](model-card.md) are available in their own pages.
+
 ## Functions Overview
 More details of boundaries, plots and structure are in the notebook.
 
