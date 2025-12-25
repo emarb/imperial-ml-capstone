@@ -68,11 +68,14 @@ The first 5 weeks consisted of experimentation with Gaussian processes, explorin
 
 On week 6, I revisited previous results and adopted an iterative strategy of repeating whichever technique produced the most recent improvement for functions 4-6. 
 
-Then, from week 7 to week 10, using the JetBrains paper on BBO strategies in the NeurIPS 2020 competition, I tried to replicate this technique using a TuRBO algorithm. It defines a Trust Region as a hyper-rectangle around the known best solution with a decaying factor that allows shrinks the trust region when no improvements is found to allow for more fine-grained exploration arount the best point. For the TuRBO implementation with ``botorch``, both RBF and Mattern kernels are used, with either Thompson sampling (implemented as ``MaxPosteriorSampling``) or ``LogExpectedImprovement`` as acquisition functions.
+Then, from week 7 to week 11, using the JetBrains paper on BBO strategies in the NeurIPS 2020 competition, I tried to replicate this technique using a TuRBO algorithm. It defines a Trust Region as a hyper-rectangle around the known best solution with a decaying factor that allows shrinks the trust region when no improvements is found to allow for more fine-grained exploration arount the best point. For the TuRBO implementation with ``botorch``, both RBF and Mattern kernels are used, with either Thompson sampling (implemented as ``MaxPosteriorSampling``) or ``LogExpectedImprovement`` as acquisition functions.
 
 #### What I would have done differently
+During the initial submissions I focused on building Gaussian processes. Even though I have used areas with high sigma values to encourage exploration, I could have been more agressive on exploration at the beginning.
 
-_To be developped: starting with exploration, applying bounds earlier, etc._
+For high-dimensional functions, the results seem to indicate that starting with the TuRBO strategy with bounds applied since the beginning would have yielded better results. Also, if the objective of this project was only to optimize results, I would not have wasted iterations in experimenting with neural networks or SVMs.
+
+I have also encountered issues with randomness and reproducibility. The notebook is conceived to be run in order, as each week's section loads into the arrays the new inputs and outputs. This implies that to continue working on subsequent weeks the whole book must be run, including rerunning previous cells. If because of randomness the results are different every time a cell runs, they are not consistent. I have addressed this by resetting all random seeds at the beginning of the book and copying the submission in a markdown cell for precaution, but not since the beginning of the project.   
 
 ### Data datasheet and model card
 
@@ -106,9 +109,10 @@ Hyperparameter optimisation of a common ML model.
 High‑dimensional ML surrogate optimisation (e.g., 8 hyperparameters). Local maxima may be the practical target.
 
 ## Visualisations / end results (Placeholder)
-_To be added: plots, 2D/3D projections, convergence curves, acquisition function, end results._
-
+Below a plot over time of all 8 functions and the weekly results, with 0 being the initial baseline, +1 the best results in the series and -1 the worst one:
 ![Plot of all functions weekly results, normalized](images/all_functions_normalized.png)
+
+_To be added: plots, 2D/3D projections, convergence curves, acquisition function, end results._
 
 _To be completed_
 
