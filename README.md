@@ -54,12 +54,12 @@ Re-run the notebook with all data downloaded, ensuring sequential execution sinc
 |----------|---------------|----------------|---------------|------------------|
 | 1 | 7.710875114502849e-16 | 2.6752879910742468e-09 | +347,031,616.55% | 1 |
 | 2 | 0.6112052157614438 | 0.6669887774564723 | +9.13% | 1 |
-| 3 | -0.034835313350078584 | -0.0014942495830570148 | +95.71% | 1 |
+| 3 | -0.034835313350078584 | -0.001243676514707 | +96.43% | 2 |
 | 4 | -4.025542281908162 | 0.640155190044084 | +115.90% | 3 |
 | 5 | 1088.8596181962705 | 8662.4825 | +695.40% | 3 |
 | 6 | -0.714264947820240 | -0.168848797153551 | +76.36% | 3 |
-| 7 | 1.364968304499199 | 2.299734497234645 | +68.48% | 5 |
-| 8 | 9.598482002566342 | 9.981242508794001 | +3.99% | 5 |
+| 7 | 1.364968304499199 |2.483460820804842 | +81.94% | 6 |
+| 8 | 9.598482002566342 | 9.993295589189101 | +4.11% | 6 |
 
 ### Methodology Note
 The total number of weeks (total budget) is of 13 weeks (13 queries).
@@ -69,6 +69,8 @@ The first 5 weeks consisted of experimentation with Gaussian processes, explorin
 On week 6, I revisited previous results and adopted an iterative strategy of repeating whichever technique produced the most recent improvement for functions 4-6. 
 
 Then, from week 7 to week 11, using the JetBrains paper on BBO strategies in the NeurIPS 2020 competition, I tried to replicate this technique using a TuRBO algorithm. It defines a Trust Region as a hyper-rectangle around the known best solution with a decaying factor that allows shrinks the trust region when no improvements is found to allow for more fine-grained exploration arount the best point. For the TuRBO implementation with ``botorch``, both RBF and Mattern kernels are used, with either Thompson sampling (implemented as ``MaxPosteriorSampling``) or ``LogExpectedImprovement`` as acquisition functions.
+
+For the last two weeks, I continued the TuRBO for the four functions where it was showing improvements consistently: 3, 6, 7 and 8 and either a simpler implementation or Bayesian optimization or pure random sampling for the rest.  
 
 #### What I would have done differently
 During the initial submissions I focused on building Gaussian processes. Even though I have used areas with high sigma values to encourage exploration, I could have been more agressive on exploration at the beginning.
