@@ -48,18 +48,19 @@ Weekly platform results (`inputs.txt`, `outputs.txt`) are stored in `submissions
 ### Reproducing the Work
 Re-run the notebook with all data downloaded, ensuring sequential execution since sampling is simulated week by week.
 
-## Results Overview (up to week 10 submissions)
+## Results Overview (up to week 12 submissions)
 
 | Function | Baseline Best | Improved Value | % Improvement | Samples Improved |
 |----------|---------------|----------------|---------------|------------------|
 | 1 | 7.710875114502849e-16 | 2.6752879910742468e-09 | +347,031,616.55% | 1 |
-| 2 | 0.6112052157614438 | 0.6669887774564723 | +9.13% | 1 |
+| 2 | 0.6112052157614438 | 0.698220529454849 | +14.24% | 2 |
 | 3 | -0.034835313350078584 | -0.001243676514707 | +96.43% | 2 |
-| 4 | -4.025542281908162 | 0.640155190044084 | +115.90% | 3 |
+| 4 | -4.025542281908162 | 0.650442395576065 | +116.16% | 4 |
 | 5 | 1088.8596181962705 | 8662.4825 | +695.40% | 3 |
 | 6 | -0.714264947820240 | -0.168848797153551 | +76.36% | 3 |
-| 7 | 1.364968304499199 |2.483460820804842 | +81.94% | 6 |
+| 7 | 1.364968304499199 | 2.512870227959451 | +84.10% | 7 |
 | 8 | 9.598482002566342 | 9.993295589189101 | +4.11% | 6 |
+
 
 ### Methodology Note
 The total number of weeks (total budget) is of 13 weeks (13 queries).
