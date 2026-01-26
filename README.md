@@ -4,7 +4,7 @@ This is part of the capstone project for the Professional Certificate in Machine
 The project has been set up in a way that real-world conditions are simulated. Results can only be submitted once a week, and the results are back in a few days. This means that any brute-force strategy is out of the question and we are given enough time to reflect on an approach for the following week. There is a total of 13 attempts in 13 weeks.
 
 ## Black‑Box Optimization Goal
-The goal of this project is the optimization of **8 black-box functions**. For each function, 10 initial data points are provided, and each week I must submit a new point. This simulates expensive, slow evaluations.
+The goal of this project is the optimization of **8 black-box functions**. For each function, a certain number of initial data points are provided (different number for each function), and each week I must submit a new point. This simulates expensive, slow evaluations.
 
 All variables range from 0 to 1 and vary from 2‑dimensional to 8‑dimensional.
 
@@ -58,8 +58,8 @@ Re-run the notebook with all data downloaded, ensuring sequential execution sinc
 | 4 | -4.025542281908162 | 0.650442395576065 | +116.16% | 4 |
 | 5 | 1088.8596181962705 | 8662.4825 | +695.40% | 3 |
 | 6 | -0.714264947820240 | -0.168848797153551 | +76.36% | 3 |
-| 7 | 1.364968304499199 | 2.512870227959451 | +84.10% | 7 |
-| 8 | 9.598482002566342 | 9.993295589189101 | +4.11% | 6 |
+| 7 | 1.364968304499199 | 2.698828323886699 | 97.72% | 8 |
+| 8 | 9.598482002566342 | 9.995335982189101 | 4.13% | 7 |
 
 
 ### Methodology Note
